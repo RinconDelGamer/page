@@ -21,6 +21,7 @@ h3 {
 article {
   background-color: white;
   text-align: center;
+  cursor: pointer;
 }
 
 .article-text {

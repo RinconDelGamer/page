@@ -12,7 +12,7 @@ $(document).ready(function() {
               const blacks = "★★★★★★★★★★";
               const stars = blacks.slice(0, rounded) + whites.slice(rounded, 10)
               console.log(stars);
-              texto += `<article class="fat33">
+              texto += `<article class="fat33" onclick="window.open()">
                           <img src="` + art.background_image + `" alt="Imagen del juego">
                           <div class="article-text">
                             <h2>` + art.name + `</h2>
