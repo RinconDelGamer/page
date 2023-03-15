@@ -79,6 +79,9 @@
         searchField.on('keypress', function(e){
             if(e.key === 'Enter'){
                 console.log('Buscando ' + this.value);
+                e.preventDefault();
+                //https://api.rawg.io/api/games?key=9e75af030e9f43df81610d02e2b2e59f&page_size=10&search=this.value
+
             }
         });
     };
