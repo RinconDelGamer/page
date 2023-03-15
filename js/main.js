@@ -216,7 +216,7 @@
 
    /* Initialize */
     (function clInit() {
-        init();
+        //init();
         ssPreloader();
         ssSearch();
         ssMenu();
@@ -229,7 +229,7 @@
     })();
 })(jQuery);
 
-function init(){
+function Finit(){
     /* ! Aqui pondriamos la solicitud a la API para poder recibir varios elementos en el JSON
      * De momento solo tenemos un elemento en el JSON para hacer pruebas y no gastar
      * Solicitudes a la API
