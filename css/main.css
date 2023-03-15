@@ -59,7 +59,7 @@
  * # base style overrides
  *
  * ------------------------------------------------------------------- */
-html {
+ html {
     font-size : 10px;
 }
 
@@ -75,7 +75,7 @@ body {
 }
 
 body {
-    background  : #f6f7f8;
+    background  : #DFFBFC;
     font-family : "IBM Plex Sans", sans-serif;
     font-size   : 1.9rem;
     font-style  : normal;
@@ -91,7 +91,7 @@ body.nav-wrap-is-visible {
 }
 
 body.ss-bg-white {
-    background : #ffffff;
+    background : #DFFBFC;
 }
 
 /* ------------------------------------------------------------------- 
@@ -1775,7 +1775,7 @@ input::-moz-focus-inner {
 
 .masonry .entry__text {
     padding          : 3.2rem 2.8rem 4rem;
-    background-color : #ffffff;
+    background-color : #9AC1D9;
 }
 
 .masonry .entry__text p {
@@ -2176,7 +2176,7 @@ input::-moz-focus-inner {
     -ms-flex-flow     : column nowrap;
     flex-flow         : column nowrap;
     width             : 300px;
-    background-color  : #151515;
+    background-color  : #3D5B81;
     padding-top       : 6.4rem;
     padding-right     : 3.2rem;
     padding-left      : 4.4rem;
@@ -2227,7 +2227,7 @@ input::-moz-focus-inner {
     -ms-flex-align          : stretch;
     align-items             : stretch;
     max-width               : 100%;
-    background-color        : #151515;
+    background-color        : #3D5B81;
     margin-top              : 3.2rem;
 }
 

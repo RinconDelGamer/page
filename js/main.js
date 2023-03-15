@@ -20,13 +20,13 @@
             // Force page scroll position to top at page refresh
             $('html, body').animate({ scrollTop: 0 }, 'normal');
 
-            // Will first fade out the loading animation 
+            // Will first fade out the loading animation
             $("#loader").fadeOut("slow", function() {
                 // Will fade out the whole DIV that covers the website.
                 $("#preloader").delay(300).fadeOut("slow");
-            }); 
-            
-            // For content animations 
+            });
+
+            // For content animations
             $("html").removeClass('ss-preload');
             $("html").addClass('ss-loaded');
         });
@@ -52,7 +52,7 @@
 
         closeSearch.on('click', function(e) {
             var $this = $(this);
-            e.stopPropagation(); 
+            e.stopPropagation();
             if(siteBody.hasClass('search-is-visible')){
                 siteBody.removeClass('search-is-visible');
                 setTimeout(function(){
@@ -66,11 +66,11 @@
                 closeSearch.trigger('click');
             }
         });
-            
+
         searchField.on('click', function(e){
             e.stopPropagation();
         });
-            
+
         searchField.attr({placeholder: 'Escriba aquí', autocomplete: 'off'});
 
         /*
@@ -111,7 +111,7 @@
     };
 
 
-    /* Masonry */ 
+    /* Masonry */
     var ssMasonryFolio = function () {
         var containerBricks = $('.masonry');
         containerBricks.masonry({
@@ -160,7 +160,7 @@
             fade: true,
             cssEase: 'linear'
         });
-        
+
         $('.slider__slide').on('click', function() {
             $gallery.slick('slickGoTo', parseInt($gallery.slick('slickCurrentSlide'))+1);
         });
@@ -172,7 +172,7 @@
         $('.smoothscroll').on('click', function (e) {
             var target = this.hash,
             $target    = $(target);
-            
+
             e.preventDefault();
             e.stopPropagation();
 
@@ -216,7 +216,7 @@
 
    /* Initialize */
     (function clInit() {
-        init();
+        //init();
         ssPreloader();
         ssSearch();
         ssMenu();
@@ -228,21 +228,3 @@
         ssBackToTop();
     })();
 })(jQuery);
-
-function init(){
-    /* ! Aqui pondriamos la solicitud a la API para poder recibir varios elementos en el JSON
-     * De momento solo tenemos un elemento en el JSON para hacer pruebas y no gastar
-     * Solicitudes a la API
-    */
-    // Conseguimos el JSON local de manera asincrona
-    var json = $.getJSON("placeholder/res.json", function(json){
-        //console.log(Object.keys(json.results).length);
-        for (let i = 0; i < Object.keys(json.results).length; i++) {
-            document.getElementById('image').innerHTML = '<img id="image" src="' + json.results[i].background_image + '" alt="">';
-            document.getElementById('game-name').innerHTML = json.results[i].name;
-            document.getElementById('categories').innerHTML = '<a href="category.html">' + json.results[i].genres[0].name + '</a><a href="category.html">' + json.results[0].genres[1].name + '</a>';
-            document.getElementById('release-date').innerHTML = '<a href="single-standard.html">' + json.results[i].released + '</a>';
-            //document.getElementById('resume').innerHTML = '<p></p>'
-        }
-    });
-}

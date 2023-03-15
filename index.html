@@ -2,18 +2,18 @@
 <html class="no-js" lang="es">
     <head>
         <meta charset="utf-8">
-        <title>Rincon del Gamer</title>
-        <meta name="description" content="">
-        <meta name="author" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Security-Policy" content="default-src * gap://ready file:; style-src 'self' 'unsafe-inline' ; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
         <link rel="stylesheet" href="css/base.css">
         <link rel="stylesheet" href="css/vendor.css">
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/modernizr.js"></script>
+        <link rel="stylesheet" href="css/custom.css">
+        <!--<link rel="manifest" href="site.webmanifest">-->
         <link rel="icon" type="image/png" href="favicon.png">
+        <title>Rincón del Gamer</title>
     </head>
 
-    <body onload="init()">
+    <body>
         <!-- Preloader Section -->
         <div id="preloader">
             <div id="loader" class="dots-fade">
@@ -26,7 +26,7 @@
 
         <!-- Site Wrapper -->
         <div id="top" class="s-wrap site-wrapper">
-            
+
             <!-- Header Section -->
             <header class="s-header">
                 <div class="header__top">
@@ -43,12 +43,14 @@
                         <li class="has-children">
                             <a href="#0" title="">Categorias</a>
                             <ul class="sub-menu">
-                            <li><a href="category.html">Acción</a></li>
-                            <li><a href="category.html">Aventura</a></li>
-                            <li><a href="category.html">Carreras</a></li>
-                            <li><a href="category.html">ASDF</a></li>
-                            <li><a href="category.html">GHIJ</a></li>
-                            <li><a href="category.html">KLMN</a></li>
+                            <li><a href="category.html?genre=Action">Acción</a></li>
+                            <li><a href="category.html?genre=Adventure">Aventura</a></li>
+                            <li><a href="category.html?genre=Shooter">Shooter</a></li>
+                            <li><a href="category.html?genre=Racing">Carreras</a></li>
+                            <li><a href="category.html?genre=Puzzle">Puzzle</a></li>
+                            <li><a href="category.html?genre=Indie">Indie</a></li>
+                            <li><a href="category.html?genre=RPG">RPG</a></li>
+                            <li><a href="category.html?genre=Massively Multiplayer">MMO</a></li>
                             </ul>
                         </li>
                         <li><a href="styles.html" title="">Ejemplos Estilos</a></li>
@@ -81,7 +83,7 @@
             </header>
             <!-- End Header Section -->
 
-            <!-- Serach Bar -->
+            <!-- Search Bar -->
             <div class="s-search">
                 <div class="search-block">
                     <form role="search" method="get" class="search-form" action="#">
@@ -91,9 +93,9 @@
                         </label>
                         <input type="submit" class="search-submit" value="Search">
                     </form>
-        
+
                     <a href="#" title="Close Search" class="search-close">Cerrar</a>
-        
+
                 </div>  <!-- end search-block -->
 
                 <!-- search modal trigger -->
@@ -108,34 +110,15 @@
 
             <!-- Content Section -->
             <div class="s-content">
+                <div id="Folder" class="flex-box">Error: articulos.js no funciona</div>
                 <div class="masonry-wrap">
                     <div class="masonry">
                         <div class="grid-sizer"></div>
-                        
+
                         <!-- Article -->
-                        <article class="masonry__brick entry format-standard animate-this" id="article">
-                            <div class="entry__thumb">
-                                <a href="single-standard.html" class="entry__thumb-link" id="image"></a>
-                            </div>
-                            <div class="entry__text">
-                                <div class="entry__header">
-                                    <h2 class="entry__title"><a href="single-standard.html" id="game-name"></a></h2>
-                                    <div class="entry__meta">
-                                        <span class="entry__meta-cat" id="categories">
+                       
+                        <!-- End Article -->
 
-                                        </span>
-                                        <span class="entry__meta-date" id="release-date">
-                                            
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="entry__excerpt" id="resume">
-
-                                </div>
-                            </div>
-                        </article> 
-                        <!-- End Article -->                        
-        
                     </div> <!-- end masonry -->
                 </div> <!-- end masonry-wrap -->
 
@@ -162,7 +145,7 @@
                 <div class="row">
                     <div class="column large-full footer__content">
                         <div class="footer__copyright">
-                            <span>© Copyright Rincon del Gamer 2023</span> 
+                            <span>© Copyright Rincon del Gamer 2023</span>
                             <span>Design by MdS Team 1</a></span>
                         </div>
                     </div>
@@ -180,5 +163,7 @@
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/articulos-main.js"></script>
+        <script src="js/modernizr.js"></script>
     </body>
 </html>
