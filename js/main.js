@@ -228,16 +228,3 @@
         ssBackToTop();
     })();
 })(jQuery);
-
-/*function init(){
-    var json = $.getJSON("placeholder/res.json", function(json){
-        //console.log(Object.keys(json.results).length);
-        for (let i = 0; i < Object.keys(json.results).length; i++) {
-            document.getElementById('image').innerHTML = '<img id="image" src="' + json.results[i].background_image + '" alt="">';
-            document.getElementById('game-name').innerHTML = json.results[i].name;
-            document.getElementById('categories').innerHTML = '<a href="category.html">' + json.results[i].genres[0].name + '</a><a href="category.html">' + json.results[0].genres[1].name + '</a>';
-            document.getElementById('release-date').innerHTML = '<a href="single-standard.html">' + json.results[i].released + '</a>';
-            //document.getElementById('resume').innerHTML = '<p></p>'
-        }
-    });
-}*/

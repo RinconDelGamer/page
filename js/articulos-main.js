@@ -1,111 +1,47 @@
 $(document).ready(function() {
-    
-  });
-
-  function init(){
-    /*const xhr = new XMLHttpRequest();
-    xhr.open('GET', "https://api.rawg.io/api/games?key=9e75af030e9f43df81610d02e2b2e59f&page_size=10", true);
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://api.rawg.io/api/games?key=9e75af030e9f43df81610d02e2b2e59f&page_size=15', true);
     xhr.onload = function() {
-        if(this.status === 200) {
-            const response = JSON.parse(this.responseText);
-            let texto = '';
-            response.results.forEach(function(art) {
-                const rounded = Math.round(art.rating * 2);
-                const whites = "☆☆☆☆☆☆☆☆☆☆";
-                const blacks = "★★★★★★★★★★";
-                const stars = blacks.slice(0, rounded) + whites.slice(rounded, 10)
-                //console.log(art.background_image);
-                texto += `
-                    <article class="masonry__brick entry format-standard animate-this fat33">
-                        <div class="entry__thumb">
-                            <a href="single-standard.html" class="entry__thumb-link">
-                                <img id="image" src="` + art.background_image + `" alt="game_img">
-                            </a>
-                        </div>
-                        <div class="entry__text">
-                            <div class="entry__header">
-                                <h2 class="entry__title"><a href="single-standard.html" id="game-name">` + art.name + `</a></h2>
-                                <div class="entry__meta">
-                                    <span class="entry__meta-cat" id="categories">
-                                        <a href="category.html">` + art.genres[0].name + `</a><a href="category.html">` + art.genres[1].name + `</a>
-                                    </span>
-                                    <span class="entry__meta-date" id="release-date">
-                                        <a href="single-standard.html">` + art.released + `</a>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="entry__excerpt" id="resume">
-
-                            </div>
-                        </div>
-                    </article>
-                    `;
-            });
-            //console.log(texto);
-            $('#Folder').html(texto);
+    	if(this.status === 200) {
+			const response = JSON.parse(this.responseText);
+			let texto = '';
+			let num = 0;
+			response.results.every(art => {
+				//if(num >= 18) { console.log("false"); return false; }
+				//let genres = '';
+				//let boolean = 0;
+				// Algunos juegos tienen más de 2 géneros
+				art.genres.forEach(function() {
+					//if (genero.name == category) { boolean = 1; }
+					//genres += genero.name + " ";
+				});
+				// Sólo escribir el artículo si es del género seleccionado
+				//if (boolean == 1) {
+					num++;
+					const rounded = Math.round(art.rating * 2);
+					const whites = "☆☆☆☆☆☆☆☆☆☆";
+					const blacks = "★★★★★★★★★★";
+					const stars = blacks.slice(0, rounded) + whites.slice(rounded, 10)
+					texto += `
+						<article onclick="window.open()">
+							<div class="article-box">
+								<img src="` + art.background_image + `" alt="Imagen del juego">
+								<div class="article-text">
+									<h2>` + art.name + `</h2>
+									<div class="flex-box">
+										<h3 class="size3">` + art.genre + `</h3>
+										<h3 class="size2">` + art.released + `</h3>
+									</div>
+									<h4>` + art.rating + stars + `</h4>
+								</div>
+							</div>
+						</article>`
+					;
+				//}
+				return true;
+			});
+			$('#Folder').html(texto);    
         }
     };
-    xhr.send();*/
-
-    //var json = $.getJSON("placeholder/res.json", function(json){
-        //console.log(Object.keys(json.results).length);
-        /*for (let i = 0; i < Object.keys(json.results).length; i++) {
-            document.getElementById('image').innerHTML = '<img id="image" src="' + json.results[i].background_image + '" alt="">';
-            document.getElementById('game-name').innerHTML = json.results[i].name;
-            document.getElementById('categories').innerHTML = '<a href="category.html">' + json.results[i].genres[0].name + '</a><a href="category.html">' + json.results[0].genres[1].name + '</a>';
-            document.getElementById('release-date').innerHTML = '<a href="single-standard.html">' + json.results[i].released + '</a>';
-            //document.getElementById('resume').innerHTML = '<p></p>'
-        }*/
-        
-        var requestOptions = {
-            method: 'GET',
-            redirect: 'follow'
-        };
-          
-        fetch("https://api.rawg.io/api/games?key=9e75af030e9f43df81610d02e2b2e59f&page_size=10", requestOptions)
-            .then(function(response){
-                let texto = '';
-                response.results.forEach(function(art) {
-                const rounded = Math.round(art.rating * 2);
-                const whites = "☆☆☆☆☆☆☆☆☆☆";
-                const blacks = "★★★★★★★★★★";
-                const stars = blacks.slice(0, rounded) + whites.slice(rounded, 10)
-                //console.log(art.background_image);
-                texto += `
-                    <article class="masonry__brick entry format-standard animate-this fat33">
-                        <div class="entry__thumb">
-                            <a href="single-standard.html" class="entry__thumb-link">
-                                <img id="image" src="` + art.background_image + `" alt="game_img">
-                            </a>
-                        </div>
-                        <div class="entry__text">
-                            <div class="entry__header">
-                                <h2 class="entry__title"><a href="single-standard.html" id="game-name">` + art.name + `</a></h2>
-                                <div class="entry__meta">
-                                    <span class="entry__meta-cat" id="categories">
-                                        <a href="category.html">` + art.genres[0].name + `</a><a href="category.html">` + art.genres[1].name + `</a>
-                                    </span>
-                                    <span class="entry__meta-date" id="release-date">
-                                        <a href="single-standard.html">` + art.released + `</a>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="entry__excerpt" id="resume">
-
-                            </div>
-                        </div>
-                    </article>
-                    `;
-            });
-            //console.log(texto);
-            $('#Folder').html(texto);
-                //return response.json();
-            })
-            .then(function(art){})
-                
-            .catch(error => console.log('error', error));
-
-        //const response = JSON.parse(this.responseText);
-            
-    //});
-  }
+    xhr.send();
+});
