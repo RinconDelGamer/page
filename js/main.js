@@ -216,6 +216,7 @@
 
    /* Initialize */
     (function clInit() {
+        init();
         ssPreloader();
         ssSearch();
         ssMenu();
