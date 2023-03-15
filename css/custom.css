@@ -5,8 +5,7 @@ h1, h2, h3, h4 {
 
 h2 {
   font-size: 2.6rem;
-  font-weight: 400;
-  line-height: 1.231;
+  font-weight: 500;
 }
 
 h3 {
@@ -19,19 +18,36 @@ h3 {
 }
 
 article {
-  background-color: white;
   text-align: center;
   cursor: pointer;
+  width: 30.33%;
+  margin: 1.5%;
 }
 
-.article-text {
-  padding: 3.2rem 2.8rem 4rem;
-}
+.article-box { background-color: white; }
+.article-text { padding: 3.2rem 2.8rem 4rem; }
+.size2 { flex: 2; }
+.size3 { flex: 3; }
 
 .flex-box {
   display: flex;
+  flex-wrap: wrap;
   vertical-align: middle;
   justify-content: space-between;
 }
 
-.fat33 { width: 33.3333%; }
+@media screen and (min-width: 1101px) and (max-width: 1400px) {
+  article { width: 46%; margin: 2%; }
+}
+
+@media screen and (min-width: 951px) and (max-width: 1100px) {
+  article { width: 30.33%; margin: 1.5%; }
+}
+
+@media screen and (min-width: 651px) and (max-width: 950px) {
+  article { width: 46%; margin: 2%; }
+}
+
+@media screen and (max-width: 650px) {
+  article { width: 90%; margin: 5%; }
+}
