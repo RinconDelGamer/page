@@ -18,7 +18,7 @@ $(document).ready(function() {
 				const blacks = "★★★★★★★★★★";
 				const stars = blacks.slice(0, rounded) + whites.slice(rounded, 10)
 				texto += `
-					<article onclick="window.open()">
+					<article onclick="window.open('article.html?id=` + art.id + `', '_self')">
 						<div class="article-box">
 							<img src="` + art.background_image + `" alt="Imagen del juego">
 							<div class="article-text">
