@@ -1,3 +1,6 @@
+/*====================================================================*
+ !               Rincon del Gamer - Articulos JS                      *
+ *====================================================================*/
 $(document).ready(function() {
     // Obtener la categoría actual
     const searchParams = new URLSearchParams(window.location.search);
@@ -6,7 +9,7 @@ $(document).ready(function() {
 
     // Cosas del API
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://api.rawg.io/api/games?key=9e75af030e9f43df81610d02e2b2e59f&page_size=50', true);
+    xhr.open('GET', 'https://api.rawg.io/api/games?key=9e75af030e9f43df81610d02e2b2e59f&page_size=500', true);
     xhr.onload = function() {
     	if(this.status === 200) {
 			const response = JSON.parse(this.responseText);
@@ -29,7 +32,7 @@ $(document).ready(function() {
 					const blacks = "★★★★★★★★★★";
 					const stars = blacks.slice(0, rounded) + whites.slice(rounded, 10)
 					texto += `
-						<article onclick="window.open()">
+						<article onclick="window.open('article.html?id=` + art.id + `', '_self')">
 							<div class="article-box">
 								<img src="` + art.background_image + `" alt="Imagen del juego">
 								<div class="article-text">

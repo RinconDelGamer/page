@@ -1,9 +1,8 @@
-/*====================================================================*
- !             Rincon del Gamer - Articulos del Main JS               *
- *====================================================================*/
 $(document).ready(function() {
+    const searchParams = new URLSearchParams(window.location.search);
+    const search = searchParams.get("search");
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://api.rawg.io/api/games?key=9e75af030e9f43df81610d02e2b2e59f&page_size=15', true);
+    xhr.open('GET', 'https://api.rawg.io/api/games?key=9e75af030e9f43df81610d02e2b2e59f&page_size=15&search='+search, true);
     xhr.onload = function() {
     	if(this.status === 200) {
 			const response = JSON.parse(this.responseText);

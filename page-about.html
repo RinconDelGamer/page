@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="es">
     <head>
         <meta charset="utf-8">
-        <title>Rincon del Gamer</title>
-        <meta name="description" content="">
-        <meta name="author" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Security-Policy" content="default-src * gap://ready file:; style-src 'self' 'unsafe-inline' ; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
         <link rel="stylesheet" href="css/base.css">
         <link rel="stylesheet" href="css/vendor.css">
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/modernizr.js"></script>
+        <link rel="stylesheet" href="css/custom.css">
         <link rel="icon" type="image/png" href="favicon.png">
-        <link rel="manifest" href="site.webmanifest">
+        <title>RdG: Conócenos!</title>
     </head>
 
     <body class="ss-bg-white">
@@ -25,6 +23,7 @@
         </div>
         <!-- End Preloader Section-->
 
+        <!-- Site Wrapper -->
         <div id="top" class="s-wrap site-wrapper">
             <!-- Header Section -->
             <header class="s-header">
@@ -42,15 +41,16 @@
                         <li class="has-children">
                             <a href="#0" title="">Categorias</a>
                             <ul class="sub-menu">
-                            <li><a href="category.html">Acción</a></li>
-                            <li><a href="category.html">Aventura</a></li>
-                            <li><a href="category.html">Carreras</a></li>
-                            <li><a href="category.html">ASDF</a></li>
-                            <li><a href="category.html">GHIJ</a></li>
-                            <li><a href="category.html">KLMN</a></li>
+                            <li><a href="category.html?genre=Action">Acción</a></li>
+                            <li><a href="category.html?genre=Adventure">Aventura</a></li>
+                            <li><a href="category.html?genre=Shooter">Shooter</a></li>
+                            <li><a href="category.html?genre=Racing">Carreras</a></li>
+                            <li><a href="category.html?genre=Puzzle">Puzzle</a></li>
+                            <li><a href="category.html?genre=Indie">Indie</a></li>
+                            <li><a href="category.html?genre=RPG">RPG</a></li>
+                            <li><a href="category.html?genre=Massively Multiplayer">MMO</a></li>
                             </ul>
                         </li>
-                        <li><a href="styles.html" title="">Ejemplos Estilos</a></li>
                         <li><a href="page-about.html" title="">Acerca de Nosotros</a></li>
                         <li><a href="page-contact.html" title="">Contacto</a></li>
                     </ul>
@@ -80,7 +80,7 @@
             </header>
             <!-- End Header Section -->
             
-            <!-- Serach Bar -->
+            <!-- Search Bar -->
             <div class="s-search">
                 <div class="search-block">
                     <form role="search" method="get" class="search-form" action="#">
@@ -90,27 +90,20 @@
                         </label>
                         <input type="submit" class="search-submit" value="Search">
                     </form>
-        
                     <a href="#" title="Close Search" class="search-close">Cerrar</a>
-        
-                </div>  <!-- end search-block -->
-
-                <!-- search modal trigger -->
+                </div>
                 <a href="#0" class="search-trigger">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z"></path></svg>
                     <span>Buscar</span>
                 </a>
                 <span class="search-line"></span>
-
             </div>
             <!-- End Serach Bar -->
 
             <!-- Content Section -->
             <div class="s-content content">
                 <main class="row content__page">
-                    
                     <section class="column large-full entry format-standard">
-
                         <div class="media-wrap">
                             <div>
                                 <img src="images/thumbs/about/about-1000.jpg" srcset="images/thumbs/about/about-2000.jpg 2000w, 
@@ -118,46 +111,35 @@
                                         images/thumbs/about/about-500.jpg 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
                             </div>
                         </div>
-
                         <div class="content__page-header">
                             <h1 class="display-1">
                             El Rincón del Gamer.
                             </h1>
-                        </div> <!-- end content__page-header -->
-
+                        </div>
                         <p>
                             La página cuenta con la versión de navegadores para computadoras y para dispositivos móviles, esto debido a que se busca una mayor comodidad en el usuario.
                         </p>
-
                         <hr>
-
                         <div class="row block-large-1-2 block-tab-full">
                             <div class="column">
                                 <h4>¿Quiénes somos?</h4>
                                 <p>Nacemos de la idea de querer videojuegos al mejor precio posible en el mercado, donde a su vez tratamos de apoyar desarrolladores independientes dando la oportunidad de publicar sus juegos sin ningún tipo de pago, al menos no hasta que tengan los recursos para poder pagar.</p>
                             </div>
-
                             <div class="column">
                                 <h4>Nuestra misión.</h4>
                                 <p>Nuestra página web esta enfocada en la venta de videojuegos, contando desde luego con videojuegos AAA pero también con juegos indies, esto porque nuestra meta es poder apoyar a aquellos pequeños desarrolladores que intentan crecer.</p>
                             </div>
-
                             <div class="column">
                                 <h4>Nuestra visión.</h4>
                                 <p>Vemos a los desarrolladores independientes como una inversión, esto quiere decir que, damos la oprtunidad de publicar y promocionar sus juegos sin ningún tipo de precio inicial, con el tiempo, una vez qu cuenten con los recursos, se cobrará una pequeña por comisión.</p>
                             </div>
-
                             <div class="column">
                                 <h4>Nuestros valores.</h4>
                                 <p>Somos una página honesta, la gente puede venir a nosotros a comprar sus juegos favoritos sin el miedo de ser estafados o con el miedo de que sus datos deas robados y usados de mala manera. Buscamos que la gente pueda confiar en nosotros y en lo que ofrecemos.</p>
                             </div>
-
                         </div>
-
                     </section>
-
                 </main>
-
             </div>
             <!-- End Content Section -->
 
@@ -176,7 +158,6 @@
                 </div>
             </footer>
             <!-- End Footer Section -->
-
         </div>
         <!-- End Site Wrapper -->
 

@@ -1,11 +1,11 @@
-/*====================================================================
- !                  Rincon del Gamer - Main JS
+/*====================================================================*
+ !                  Rincon del Gamer - Main JS                        *
  *====================================================================*/
 (function($) {
     "use strict";
     var cfg = {
-        scrollDuration : 800, // Smoothscroll duration in ms
-        mailChimpURL   : ''   // Mailchimp url
+        scrollDuration : 800,
+        mailChimpURL   : ''
     },
 
     $WIN = $(window);
@@ -32,7 +32,7 @@
         });
     };
 
-   /* Search */
+    /* Search */
     var ssSearch = function() {
         var searchWrap = $('.search-block'),
             searchField = searchWrap.find('.search-field'),
@@ -73,14 +73,10 @@
 
         searchField.attr({placeholder: 'Escriba aquí', autocomplete: 'off'});
 
-        /*
-            TODO: Arrange the Search Fucntion to call API and request the respective Answers
-         */
         searchField.on('keypress', function(e){
             if(e.key === 'Enter'){
                 e.preventDefault();
-                var dir = 'https://api.rawg.io/api/games?key=9e75af030e9f43df81610d02e2b2e59f&page_size=10&search=' + this.value;
-                console.log('dir: ' + dir);
+                window.open('search.html?search='+this.value, "_self");
             }
         });
     };
@@ -111,7 +107,6 @@
                 .slideUp(200);
         });
     };
-
 
     /* Masonry */
     var ssMasonryFolio = function () {
@@ -149,7 +144,7 @@
         });
     };
 
-   /* Slick slider */
+    /* Slick slider */
     var ssSlickSlider = function() {
         var $gallery = $('.slider__slides').slick({
             arrows: false,
@@ -168,8 +163,7 @@
         });
     };
 
-
-   /* Smooth scrolling */
+    /* Smooth scrolling */
     var ssSmoothScroll = function() {
         $('.smoothscroll').on('click', function (e) {
             var target = this.hash,
@@ -191,8 +185,7 @@
         });
     };
 
-
-   /* Alert boxes */
+    /* Alert boxes */
     var ssAlertBoxes = function() {
         $('.alert-box').on('click', '.alert-box__close', function() {
             $(this).parent().fadeOut(500);
@@ -215,10 +208,8 @@
         });
     };
 
-
-   /* Initialize */
+    /* Initialize */
     (function clInit() {
-        //init();
         ssPreloader();
         ssSearch();
         ssMenu();
